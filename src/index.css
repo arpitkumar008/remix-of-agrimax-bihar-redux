@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Sora:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Agrimax Bihar - Premium Agricultural Design System
+   Inspired by international agribusiness leaders: John Deere, CNH Industrial, AGCO
+   Warm earth tones, copper accents, deep forest greens
+*/
+
+@layer base {
+  :root {
+    /* Premium warm palette */
+    --background: 40 20% 98%;
+    --foreground: 30 15% 15%;
+
+    --card: 40 25% 99%;
+    --card-foreground: 30 15% 15%;
+
+    --popover: 40 25% 99%;
+    --popover-foreground: 30 15% 15%;
+
+    /* Primary: Deep forest green */
+    --primary: 150 45% 23%;
+    --primary-foreground: 40 20% 98%;
+
+    /* Secondary: Warm copper/bronze */
+    --secondary: 30 65% 52%;
+    --secondary-foreground: 40 20% 98%;
+
+    /* Muted warm earth */
+    --muted: 35 20% 94%;
+    --muted-foreground: 30 12% 45%;
+
+    /* Accent: Rich golden amber */
+    --accent: 42 90% 55%;
+    --accent-foreground: 30 15% 15%;
+
+    /* Status colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 40 20% 98%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 150 45% 23%;
+
+    --radius: 0.75rem;
+
+    /* Extended premium palette */
+    --earth-brown: 25 40% 32%;
+    --earth-light: 40 30% 96%;
+    --forest-dark: 150 50% 15%;
+    --harvest-gold: 42 90% 55%;
+    --wheat-cream: 45 60% 97%;
+    --soil-brown: 25 35% 22%;
+    --lime-green: 90 55% 48%;
+    --sky-blue: 205 75% 52%;
+    --copper: 25 70% 50%;
+    --terracotta: 15 55% 55%;
+
+    /* Premium gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(150 50% 15% / 0.95) 0%, hsl(150 45% 23% / 0.9) 50%, hsl(30 40% 25% / 0.85) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(42 90% 55%) 0%, hsl(30 65% 52%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(40 25% 99%) 0%, hsl(40 30% 96%) 100%);
+    --gradient-premium: linear-gradient(135deg, hsl(150 45% 23%) 0%, hsl(150 50% 15%) 50%, hsl(25 40% 25%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(35 30% 97%) 0%, hsl(40 25% 94%) 100%);
+
+    /* Premium shadows */
+    --shadow-sm: 0 2px 8px hsl(30 15% 15% / 0.06);
+    --shadow-md: 0 8px 24px hsl(30 15% 15% / 0.1);
+    --shadow-lg: 0 20px 50px hsl(30 15% 15% / 0.14);
+    --shadow-gold: 0 8px 32px hsl(42 90% 55% / 0.35);
+    --shadow-copper: 0 8px 32px hsl(30 65% 52% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Sora', sans-serif;
+  }
+}
+
+@layer components {
+  /* Premium button styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold text-base;
+    @apply hover:bg-forest-dark transition-all duration-300;
+    @apply shadow-md hover:shadow-lg hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-xl font-semibold text-base;
+    @apply hover:bg-copper transition-all duration-300;
+    @apply shadow-copper hover:shadow-lg;
+  }
+
+  /* Card styles */
+  .card-premium {
+    @apply bg-card rounded-2xl border border-border/50;
+    box-shadow: var(--shadow-md);
+    @apply transition-all duration-500 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Section containers */
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Premium underline */
+  .gold-underline {
+    @apply relative inline-block;
+  }
+  
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-1 bg-secondary rounded-full;
+    transform: scaleX(0.6);
+  }
+
+  /* Stats card */
+  .stat-card {
+    @apply bg-card/95 backdrop-blur-sm rounded-2xl p-6 text-center;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Product card */
+  .product-card {
+    @apply bg-card rounded-2xl overflow-hidden border border-border/30;
+    box-shadow: var(--shadow-sm);
+    @apply transition-all duration-500 hover:shadow-lg hover:-translate-y-2;
+  }
+
+  /* Feature card */
+  .feature-card {
+    @apply bg-card rounded-2xl p-8 border border-border/50;
+    box-shadow: var(--shadow-sm);
+    @apply transition-all duration-500 hover:shadow-md hover:-translate-y-1;
+  }
+
+  /* Navigation glass effect */
+  .nav-glass {
+    @apply bg-card/95 backdrop-blur-md;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Floating animation */
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Texture overlay */
+  .texture-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Grain texture */
+  .grain-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full hover:bg-primary/50;
+  }
+}
+
+/* Keyframe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
